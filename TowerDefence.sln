@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefence", "TowerDefence\TowerDefence.csproj", "{9133422C-223B-4799-A724-6FA9DC6219CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9133422C-223B-4799-A724-6FA9DC6219CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9133422C-223B-4799-A724-6FA9DC6219CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9133422C-223B-4799-A724-6FA9DC6219CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9133422C-223B-4799-A724-6FA9DC6219CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F1D2AD1-BAF9-415F-BF03-E11121EAA46E}
+	EndGlobalSection
+EndGlobal
