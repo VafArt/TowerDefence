@@ -10,7 +10,7 @@ namespace TowerDefence.Attackers
     {
         public int HealthPoints { get; protected set; }
 
-        public int Speed { get; protected set; }
+        public int Speed { get; set; }
 
         public int Cost { get; protected set; }
 

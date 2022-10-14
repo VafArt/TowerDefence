@@ -99,6 +99,39 @@ namespace TowerDefence
                 button7.Font = new Font("Arial", 18);
             }
 
+            if (Width >= resolution.Width / 2 && Width <= resolution.Width / 1.5 && dpi.X < 150)
+            {
+                button1.Font = new Font("Arial", 14);
+                button2.Font = new Font("Arial", 14);
+                button3.Font = new Font("Arial", 14);
+                button4.Font = new Font("Arial", 14);
+                button5.Font = new Font("Arial", 14);
+                button6.Font = new Font("Arial", 14);
+                button7.Font = new Font("Arial", 14);
+            }
+
+            if (Width >= resolution.Width / 1.5 && dpi.X < 150)
+            {
+                button1.Font = new Font("Arial", 18);
+                button2.Font = new Font("Arial", 18);
+                button3.Font = new Font("Arial", 18);
+                button4.Font = new Font("Arial", 18);
+                button5.Font = new Font("Arial", 18);
+                button6.Font = new Font("Arial", 18);
+                button7.Font = new Font("Arial", 18);
+            }
+
+            if (Width >= resolution.Width && dpi.X < 150)
+            {
+                button1.Font = new Font("Arial", 22);
+                button2.Font = new Font("Arial", 22);
+                button3.Font = new Font("Arial", 22);
+                button4.Font = new Font("Arial", 22);
+                button5.Font = new Font("Arial", 22);
+                button6.Font = new Font("Arial", 22);
+                button7.Font = new Font("Arial", 22);
+            }
+
         }
     }
 }

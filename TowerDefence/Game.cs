@@ -15,13 +15,15 @@ namespace TowerDefence
 
         private List<Attacker> Attackers { get; set; }
 
-        private int _lineCount;
+        private int _lineCount = 3;
+
+        public int Money { get; private set; }
 
         public Game(int formWidth)
         {
             Line = new List<Line>();
 
-            for(int i = 0; i < _lineCount - 1; i++)
+            for(int i = 0; i < _lineCount; i++)
                 Line.Add(new Line());
 
             Type attackerType = typeof(Attacker);
