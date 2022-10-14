@@ -13,6 +13,8 @@ namespace TowerDefence
         {
             InitializeComponent();
 
+            var game = new Game(Width);
+
             DoubleBuffered = true;
 
             MinimumSize = new Size(resolution.Width / 2, resolution.Height / 2);
@@ -37,6 +39,14 @@ namespace TowerDefence
             button1.Height = panel2.Height / 3;
             button2.Height = panel2.Height / 3;
             button3.Height = panel2.Height / 3;
+
+            button1.Font = new Font("Arial", 9);
+            button2.Font = new Font("Arial", 9);
+            button3.Font = new Font("Arial", 9);
+            button4.Font = new Font("Arial", 9);
+            button5.Font = new Font("Arial", 9);
+            button6.Font = new Font("Arial", 9);
+            button7.Font = new Font("Arial", 9);
 
 
         }
@@ -89,15 +99,6 @@ namespace TowerDefence
                 button7.Font = new Font("Arial", 18);
             }
 
-        private void Form1_SizeChanged(object sender, EventArgs e)
-        {
-            panel2.Height = (int)Math.Round(((Height - 39) * 0.2));
-            panel1.Height = (int)Math.Round(((Height - 39) * 0.8));
-
-                if (Width >= resolution.Width)
-                {
-                    button1.Font = new Font("Arial", 18);
-            }   }
         }
     }
 }

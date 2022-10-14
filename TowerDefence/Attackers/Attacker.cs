@@ -12,6 +12,8 @@ namespace TowerDefence.Attackers
 
         public int Speed { get; protected set; }
 
+        public int Cost { get; protected set; }
+
         public Attacker(int formWidth)
         {
             Speed = formWidth / 10;

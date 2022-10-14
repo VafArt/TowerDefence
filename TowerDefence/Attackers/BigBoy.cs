@@ -12,6 +12,7 @@ namespace TowerDefence.Attackers
             : base(formWidth)
         {
             HealthPoints = 800;
+            Cost = 3;
         }
     }
 }
