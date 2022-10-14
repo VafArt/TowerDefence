@@ -1,3 +1,4 @@
+using System.Runtime.Intrinsics.Arm;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace TowerDefence
@@ -5,6 +6,7 @@ namespace TowerDefence
     public partial class Form1 : Form
     {
         private Size resolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size;
+
         PointF dpi = PointF.Empty;
 
         public Form1()
@@ -16,6 +18,12 @@ namespace TowerDefence
             MinimumSize = new Size(resolution.Width / 2, resolution.Height / 2);
             Width = resolution.Width / 2;
             Height = resolution.Height / 2;
+
+            using (Graphics g = this.CreateGraphics())
+            {
+                dpi.X = g.DpiX;
+                dpi.Y = g.DpiY;
+            }
 
             panel1.Height = (int)Math.Round(((Height - 39) * 0.85));
             panel2.Height = (int)Math.Round(((Height - 39) * 0.15));
@@ -48,7 +56,7 @@ namespace TowerDefence
             button2.Height = panel2.Height / 3;
             button3.Height = panel2.Height / 3;
 
-            if (Width >= resolution.Width / 2 && Width <= resolution.Width / 1.5)
+            if (Width >= resolution.Width / 2 && Width <= resolution.Width / 1.5 && dpi.X > 150)
             {
                 button1.Font = new Font("Arial", 9);
                 button2.Font = new Font("Arial", 9);
@@ -59,7 +67,7 @@ namespace TowerDefence
                 button7.Font = new Font("Arial", 9);
             }
 
-            if (Width >= resolution.Width / 1.5)
+            if (Width >= resolution.Width / 1.5 && dpi.X > 150)
             {
                 button1.Font = new Font("Arial", 13);
                 button2.Font = new Font("Arial", 13);
@@ -70,7 +78,7 @@ namespace TowerDefence
                 button7.Font = new Font("Arial", 13);
             }
 
-            if (Width >= resolution.Width)
+            if (Width >= resolution.Width && dpi.X > 150)
             {
                 button1.Font = new Font("Arial", 18);
                 button2.Font = new Font("Arial", 18);
@@ -81,30 +89,10 @@ namespace TowerDefence
                 button7.Font = new Font("Arial", 18);
             }
 
-            //var threadParameters = new System.Threading.ThreadStart(delegate { SizeChangedHandler(); });
-            //var thread2 = new System.Threading.Thread(threadParameters);
-            //thread2.Start();
-        }
-
-        public void SizeChangedHandler()
+        private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            if (button1.InvokeRequired)
-            {
-                // Call this same method but append THREAD2 to the text
-                Action sizeChangedHandler = delegate { SizeChangedHandler(); };
-                button1.Invoke(sizeChangedHandler);
-            }
-            else
-            {
-                if (Width >= resolution.Width / 2 && Width <= resolution.Width / 1.5)
-                {
-                    button1.Font = new Font("Arial", 9);
-                }
-
-                if (Width >= resolution.Width / 1.5)
-                {
-                    button1.Font = new Font("Arial", 13);
-                }
+            panel2.Height = (int)Math.Round(((Height - 39) * 0.2));
+            panel1.Height = (int)Math.Round(((Height - 39) * 0.8));
 
                 if (Width >= resolution.Width)
                 {
