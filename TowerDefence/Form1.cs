@@ -40,13 +40,26 @@ namespace TowerDefence
             button2.Height = panel2.Height / 3;
             button3.Height = panel2.Height / 3;
 
-            button1.Font = new Font("Arial", 9);
-            button2.Font = new Font("Arial", 9);
-            button3.Font = new Font("Arial", 9);
-            button4.Font = new Font("Arial", 9);
-            button5.Font = new Font("Arial", 9);
-            button6.Font = new Font("Arial", 9);
-            button7.Font = new Font("Arial", 9);
+            if (dpi.X > 150)
+            {
+                button1.Font = new Font("Arial", 9);
+                button2.Font = new Font("Arial", 9);
+                button3.Font = new Font("Arial", 9);
+                button4.Font = new Font("Arial", 9);
+                button5.Font = new Font("Arial", 9);
+                button6.Font = new Font("Arial", 9);
+                button7.Font = new Font("Arial", 9);
+            }
+            else
+            {
+                button1.Font = new Font("Arial", 14);
+                button2.Font = new Font("Arial", 14);
+                button3.Font = new Font("Arial", 14);
+                button4.Font = new Font("Arial", 14);
+                button5.Font = new Font("Arial", 14);
+                button6.Font = new Font("Arial", 14);
+                button7.Font = new Font("Arial", 14);
+            }
 
 
         }
