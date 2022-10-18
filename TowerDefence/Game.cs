@@ -9,7 +9,7 @@ using TowerDefence.Attackers;
 
 namespace TowerDefence
 {
-    public class Game
+    public class Game : IGame
     {
         public List<Line> Line { get; set; }
 
@@ -44,6 +44,11 @@ namespace TowerDefence
             {
 
             }
+        }
+
+        public void Start()
+        {
+            throw new NotImplementedException();
         }
     }
 }
