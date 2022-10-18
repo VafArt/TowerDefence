@@ -11,30 +11,50 @@ namespace TowerDefence
 {
     public class Game : IGame
     {
-        public List<Line> Line { get; set; }
+        private Random _random = new Random();
 
-        private List<Attacker> Attackers { get; set; }
+        public List<Line> Lines { get; set; }
+
+        private List<Attacker> _attackers;
+
+        private Queue<Attacker> _attackersQueue = new Queue<Attacker>();
 
         private int _lineCount = 3;
 
         public int Money { get; private set; }
 
+        private int _amountHealthPoints;
+        public int AmountHealthPoints
+        {
+            get
+            {
+                _amountHealthPoints = 0;
+                foreach (var line in Lines)
+                    _amountHealthPoints+=line.AmountHealthPoints;
+                return _amountHealthPoints;
+            }
+            private set
+            {
+                _amountHealthPoints = value;
+            }
+        }
+
         public Game(int formWidth)
         {
-            Line = new List<Line>();
+            Lines = new List<Line>();
 
             for(int i = 0; i < _lineCount; i++)
-                Line.Add(new Line());
+                Lines.Add(new Line());
 
             Type attackerType = typeof(Attacker);
 
             var attackers = Assembly.GetAssembly(attackerType).GetTypes().Where(type=>type.IsSubclassOf(attackerType));
 
-            Attackers = new List<Attacker>();
+            _attackers = new List<Attacker>();
 
             foreach(var attacker in attackers)
             {
-                Attackers.Add((Attacker)Activator.CreateInstance(attacker, formWidth));
+                _attackers.Add((Attacker)Activator.CreateInstance(attacker, formWidth));
             }
         }
 
@@ -42,7 +62,17 @@ namespace TowerDefence
         {
             while(lvl != 0)
             {
+                var attackerNumber = _random.Next(0, _attackers.Count);
+                if (_attackers[attackerNumber].Cost > lvl)
+                    continue;
 
+                _attackersQueue.Enqueue(_attackers[attackerNumber]);
+                lvl -= _attackers[attackerNumber].Cost;
+            }
+            while(_attackersQueue.Count != 0)
+            {
+                var lineNumber = _random.Next(0, Lines.Count);
+                Lines[lineNumber].Attackers.Add(_attackersQueue.Dequeue());
             }
         }
 
