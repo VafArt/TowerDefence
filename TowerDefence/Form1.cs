@@ -13,9 +13,9 @@ namespace TowerDefence
         {
             InitializeComponent();
 
-            var game = new Game(Width);
-            game.InitAttackers(5);
-            var am = game.AmountHealthPoints;
+            var levelBuilder = new LevelBuilder(Width, 64);
+            levelBuilder.AddAttackers();
+            var level = levelBuilder.Build();
 
             DoubleBuffered = true;
 

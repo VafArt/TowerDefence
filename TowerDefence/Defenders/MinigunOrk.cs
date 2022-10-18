@@ -10,7 +10,7 @@ namespace TowerDefence.Defenders
     {
         public MinigunOrk()
         {
-            DamagePerSecond = 800;
+            Damage = 800;
             Cost = 1200;
         }
     }

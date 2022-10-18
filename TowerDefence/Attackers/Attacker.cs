@@ -18,6 +18,5 @@ namespace TowerDefence.Attackers
         {
             Speed = formWidth / 10;
         }
-
     }
 }

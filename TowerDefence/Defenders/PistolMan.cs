@@ -10,7 +10,7 @@ namespace TowerDefence.Defenders
     {
         public PistolMan()
         {
-            DamagePerSecond = 200;
+            Damage = 200;
             Cost = 300;
         }
     }

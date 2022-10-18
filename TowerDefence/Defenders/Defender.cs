@@ -8,7 +8,9 @@ namespace TowerDefence.Defenders
 {
     public abstract class Defender
     {
-        public int DamagePerSecond { get; protected set; }
+        public int Damage { get; protected set; }
+
+        public int RateOfFire { get; protected set; } = 1;
 
         public int Cost { get; protected set; }
     }

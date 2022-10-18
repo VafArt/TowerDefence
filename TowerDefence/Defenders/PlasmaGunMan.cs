@@ -10,7 +10,7 @@ namespace TowerDefence.Defenders
     {
         public PlasmaGunMan()
         {
-            DamagePerSecond = 400;
+            Damage = 400;
             Cost = 600;
         }
     }

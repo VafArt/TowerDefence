@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TowerDefence.Builders
 {
-    public interface IGameBuilder
+    public interface ILevelBuilder
     {
-        public IGameBuilder AddAttackers(int lvl);
+        public ILevelBuilder AddAttackers();
 
-        public IGame Build();
+        public ILevel Build();
     }
 }
