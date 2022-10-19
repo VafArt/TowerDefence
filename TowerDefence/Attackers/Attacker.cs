@@ -14,6 +14,12 @@ namespace TowerDefence.Attackers
 
         public int Cost { get; protected set; }
 
+        public int Width { get; protected set; }
+
+        public int Height { get; protected set; }
+
+        public Bitmap Image { get; protected set; }
+
         public Attacker(int formWidth)
         {
             Speed = formWidth / 10;

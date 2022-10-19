@@ -13,6 +13,7 @@ namespace TowerDefence.Attackers
         {
             HealthPoints = 200;
             Cost = 1;
+            Image = Properties.Resources._1_lvl_monster;
         }
     }
 }

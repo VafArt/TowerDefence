@@ -13,5 +13,11 @@ namespace TowerDefence.Defenders
         public int RateOfFire { get; protected set; } = 1;
 
         public int Cost { get; protected set; }
+
+        public Bitmap Image { get; protected set; }
+
+        public double WidthScale { get; protected set; }
+
+        public double HeightScale { get; protected set; }
     }
 }

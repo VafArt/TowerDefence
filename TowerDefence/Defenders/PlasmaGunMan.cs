@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TowerDefence.Properties;
 
 namespace TowerDefence.Defenders
 {
@@ -12,6 +13,9 @@ namespace TowerDefence.Defenders
         {
             Damage = 400;
             Cost = 600;
+            Image = Properties.Resources._2_lvl_tower;
+            WidthScale = 0.27;
+            HeightScale = 0.18;
         }
     }
 }

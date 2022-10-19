@@ -12,6 +12,9 @@ namespace TowerDefence.Defenders
         {
             Damage = 800;
             Cost = 1200;
+            Image = Properties.Resources._3_lvl_tower;
+            WidthScale = 0.25;
+            HeightScale = 0.27;
         }
     }
 }
